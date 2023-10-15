@@ -1,5 +1,3 @@
-;Header and description
-
 (define (domain cleaner_robot)
     (:requirements :strips :equality)
 
