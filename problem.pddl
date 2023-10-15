@@ -1,4 +1,4 @@
-(define (problem problem_name) (:domain domain_name)
+(define (problem basic_problem) (:domain cleaner_robot)
 (:objects 
 )
 

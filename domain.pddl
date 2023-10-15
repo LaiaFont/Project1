@@ -1,23 +1,33 @@
 ;Header and description
 
-(define (domain domain_name)
+(define (domain cleaner_robot)
+    (:requirements :strips :equality)
 
-;remove requirements that are not needed
-(:requirements :strips :fluents :durative-actions :timed-initial-literals :typing :conditional-effects :negative-preconditions :duration-inequalities :equality)
+    (:predicates
+        (robot-location ?o)
+        (box-location ?b ?o)
+        (dirty ?o)
+        (clean ?o)
+        (empty ?o)
+        (adjacent ?o1 ?o2)
+    )
 
-(:types ;todo: enumerate types and their hierarchy here, e.g. car truck bus - vehicle
-)
+    ; ------ ACTIONS ------
+    (:action clean_office
+        :parameters (?o)
+        :precondition (and (empty ?o) (dirty ?o) (robot-location ?o))
+        :effect (and (not(dirty ?o)) (clean ?o))
+    )
 
-; un-comment following line if constants are needed
-;(:constants )
+    (:action move
+        :parameters (?o1, ?o2)
+        :precondition (and (adjacent ?o1 ?o2) (robot-location ?o1))
+        :effect (and (robot-location ?o2) (not(robot-location ?o1)))
+    )
 
-(:predicates ;todo: define predicates here
-)
-
-
-(:functions ;todo: define numeric functions here
-)
-
-;define actions here
-
+    (:action push
+        :parameters (?b, ?o1, ?o2)
+        :precondition (and (robot-location ?o1) (box-location ?b ?o1) (adjacent ?o1 ?o2) (empty ?o2))
+        :effect (and (box-location ?b ?o2) (not(box-location ?b ?o1)) (not(empty ?o2)) (empty ?o1))
+    )
 )
