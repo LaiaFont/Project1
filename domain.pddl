@@ -1,5 +1,5 @@
 (define (domain cleaner_robot)
-    (:requirements :strips :equality)
+    (:requirements :strips)
 
     (:predicates
         (robot-location ?o)
@@ -13,19 +13,19 @@
     ; ------ ACTIONS ------
     (:action clean_office
         :parameters (?o)
-        :precondition (and (empty ?o) (dirty ?o) (robot-location ?o))
+        :precondition (and (robot-location ?o) (dirty ?o))
         :effect (and (not(dirty ?o)) (clean ?o))
     )
 
     (:action move
         :parameters (?o1, ?o2)
-        :precondition (and (adjacent ?o1 ?o2) (robot-location ?o1))
-        :effect (and (robot-location ?o2) (not(robot-location ?o1)))
+        :precondition (and (robot-location ?o1) (adjacent ?o1 ?o2))
+        :effect (and (not(robot-location ?o1)) (robot-location ?o2))
     )
 
     (:action push
         :parameters (?b, ?o1, ?o2)
-        :precondition (and (robot-location ?o1) (box-location ?b ?o1) (adjacent ?o1 ?o2) (empty ?o2))
+        :precondition (and (robot-location ?o1) (box-location ?b ?o1) (empty ?o2) (adjacent ?o1 ?o2))
         :effect (and (box-location ?b ?o2) (not(box-location ?b ?o1)) (not(empty ?o2)) (empty ?o1))
     )
 )
