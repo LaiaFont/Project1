@@ -13,7 +13,7 @@
     ; ------ ACTIONS ------
     (:action clean_office
         :parameters (?o)
-        :precondition (and (robot-location ?o) (dirty ?o) (empty ?o))
+        :precondition (and (robot-location ?o) (dirty ?o))
         :effect (and (not(dirty ?o)) (clean ?o))
     )
 
