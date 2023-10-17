@@ -18,13 +18,13 @@
     )
 
     (:action move
-        :parameters (?o1, ?o2)
+        :parameters (?o1 ?o2)
         :precondition (and (robot-location ?o1) (adjacent ?o1 ?o2))
-        :effect (and (robot-location ?o2) (not (robot-location ?o1)))
+        :effect (and (robot-location ?o2))
     )
 
     (:action push
-        :parameters (?b, ?o1, ?o2)
+        :parameters (?b ?o1 ?o2)
         :precondition (and (robot-location ?o1) (box-location ?b ?o1) (empty ?o2) (adjacent ?o1 ?o2))
         :effect (and (box-location ?b ?o2) (not(box-location ?b ?o1)) (not(empty ?o2)) (empty ?o1))
     )
