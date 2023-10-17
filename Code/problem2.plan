@@ -1,0 +1,11 @@
+;;!domain: cleaner_robot
+;;!problem: smaller_problem
+
+0.00100: (clean_office o1)
+0.00200: (push ba o1 o2)
+0.00300: (move o1 o2)
+0.00400: (move o2 o4)
+0.00500: (clean_office o4)
+
+; Makespan: 0.005
+; Metric: 0.005

@@ -10,6 +10,7 @@
     o8
     o9
     bA
+    bB
 )
 
 (:init
@@ -24,6 +25,7 @@
     (adjacent o9 o8) (adjacent o9 o6)
     (robot-location o7)
     (box-location bA o5)
+    (box-location bB o2)
     (empty o1) (empty o2) (empty o3) (empty o4) (empty o6) (empty o7) (empty o8) (empty o9)
     (dirty o1) (dirty o2) (dirty o3) (dirty o4) (dirty o5) (dirty o6) (dirty o7) (dirty o8) (dirty o9)
 )
@@ -31,6 +33,7 @@
 (:goal (and
     (clean o1) (clean o2) (clean o3) (clean o4) (clean o5) (clean o6) (clean o7) (clean o8) (clean o9)
     (box-location bA o9)
+    (box-location bB o9)
     (empty o1) (empty o2) (empty o3) (empty o4) (empty o5) (empty o6) (empty o7) (empty o8)
     (robot-location o4)
 ))

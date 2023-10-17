@@ -49,6 +49,7 @@
     (adjacent o24 o25) (adjacent o25 o24)
     (dirty o1) (dirty o2) (dirty o3) (dirty o4) (dirty o5) (dirty o6) (dirty o7) (dirty o8) (dirty o9) (dirty o10) (dirty o11) (dirty o13) (dirty o12) (dirty o14) (dirty o15) (dirty o16) (dirty o17) (dirty o18) (dirty o19) (dirty o20) (dirty o21) (dirty o22) (dirty o23) (dirty o24) (dirty o25)
     (robot-location o7)
+    (empty o1) (empty o2) (empty o3) (empty o4) (empty o7) (empty o10) (empty o13) (empty o14) (empty o15) (empty o16) (empty o17) (empty o18) (empty o19) (empty o20) (empty o21) (empty o22) (empty o23) (empty o24) (empty o25)
     (box-location boxA o5) 
     (box-location boxB o6)
     (box-location boxC o8)
@@ -60,7 +61,13 @@
 (:goal (and
     ;todo: put the goal condition here
     (clean o1) (clean o2) (clean o3) (clean o4) (clean o5) (clean o6) (clean o7) (clean o8) (clean o9) (clean o10) (clean o11) (clean o12) (clean o13) (clean o14) (clean o15) (clean o16) (clean o17) (clean o18) (clean o19) (clean o20) (clean o21) (clean o22) (clean o23) (clean o24) (clean o25)
-    
+    (empty o1) (empty o2) (empty o3) (empty o4) (empty o6) (empty o7) (empty o8) (empty o9) (empty o11) (empty o12) (empty o13) (empty o14) (empty o16) (empty o17) (empty o18) (empty o19) (empty o23) (empty o24) (empty o25)
+    (box-location boxA o5)
+    (box-location boxB o10)
+    (box-location boxC o15)
+    (box-location boxD o20)
+    (box-location boxE o21)
+    (box-location boxF o22)
     (robot-location o13)  
 ))
 )
