@@ -20,7 +20,7 @@
     (:action move
         :parameters (?o1 ?o2)
         :precondition (and (robot-location ?o1) (adjacent ?o1 ?o2))
-        :effect (and (robot-location ?o2))
+        :effect (and (robot-location ?o2) (not (robot-location ?o1)))
     )
 
     (:action push

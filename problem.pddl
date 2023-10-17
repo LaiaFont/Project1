@@ -19,8 +19,7 @@
     (robot-location o7)
     (box-location bA o1) (box-location bB o6) (box-location bC o9)
     (empty o2) (empty o3) (empty o4) (empty o5) (empty o7) (empty o8)
-    (dirty o1) (dirty o2) (dirty o9) 
-    (clean o3) (clean o4) (clean o5) (clean o6) (clean o7) (clean o8)
+    (dirty o1) (dirty o2) (dirty o3) (dirty o4) (dirty o5) (dirty o6) (dirty o7) (dirty o8) (dirty o9) 
 )
 
 (:goal (and
